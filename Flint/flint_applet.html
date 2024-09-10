@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Flint</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/fullpage.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script type="text/javascript" id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?version=4.8.0"></script>
+
+</head>
+<body>
+    <div class="header">
+        <a href="../index.html">
+            <img src="../img/sts_logo.jpeg" alt="Logo" style="height: 50px;">
+        </a>
+    </div>
+
+    <!-- WRAPPER -->
+    <div class="container-fluid">
+        <div class="section">
+            <div class="row d-flex">
+                <div class="container-fluid">
+                    <div class="col-12 align-self-center">
+                        <div class="row d-flex justify-content-center">
+                            <div class = "col-4 container align-self-center">
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col">
+                                        <br>
+                                        In 2015, a team of Virginia Tech researchers* estimated the proportion of homes in Flint with dangerous pipes.
+                                        They randomly sampled homes from the city, inspecting the water for lead contamination.
+                                        <br><br>
+                                        Click the button below to sample a random home from a comprehensive Flint lead pipe database**
+                                        <br> <br>
+                                    </div>
+                                </div>
+
+                                <div class="row d-flex justify-content-center">
+                                    <!--                                    BUTTONS-->
+                                    <div id="loadMapButton" class="row" style="display: block">
+                                        <div class="row" style="display: block; text-align:center">
+                                            <div class="buttons">
+                                                <button class="load-map">Sample a random home</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="height: 120px">
+                                    <div id="results" style="display: none; border: thin solid grey; border-radius: 5px; background-color: #dcdcdc">
+                                        <div id="addressLabelContainer" class="row d-flex justify-content-center" style="display: none">
+                                            <div class="col">
+                                                <div id="addressLabel" class="row d-flex justify-content-center"  style="display: none">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="leadLabelContainer" class="row d-flex justify-content-center" style="display: none">
+                                            <div id="leadLabel1" class="row d-flex justify-content-center" style="display: none"></div>
+                                            &emsp; &emsp;
+                                            <div id="leadLabel2" class="row d-flex justify-content-center" style="display: none"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row d-flex justify-content-center">
+                                    <div id="citation">
+                                        * Edwards, M., et al. <a href="http://flintwaterstudy.org/information-for-flint-residents/results-for-citizen-testing-for-lead-300-kits/">Virginia Tech’s Flint Water Study</a> (published Sept. 2015, accessed July 2020)
+                                        <br><br>
+                                        ** <a href="https://flintpipemap.org/map">This database</a> was painstakingly compiled by BlueConduit in the years following the outbreak of the Flint water crisis.
+                                        At the time of the Virginia Tech study, researchers only had the time to do a random sample of
+                                        n = 252 homes in Flint. This activity is replicating the random sampling process of the researchers.
+                                    </div>
+                                    <br>
+                                </div>
+
+                                <div class="row credits">
+                                    Applet by &nbsp;
+                                    <a href="https://skewthescript.org/">Skew The Script</a>
+                                    &nbsp; (authors: Max Cembalest and Dashiell Young-Saver)
+                                </div>
+                            </div>
+
+                            <div class = "col-1 container align-self-center"></div>
+
+                            <div class = "col-7 align-self-center">
+                                <div style="border: thin solid grey; border-radius: 5px; background-color: #dcdcdc">
+                                    <div class="row d-flex justify-content-center">
+                                        <div id="map"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- - - - - - - - - - - - >
+<    Load JS libraries     >
+<- - - - - - - - - - - - -->
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <!-- d3 -->
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://d3js.org/d3-array.v2.min.js"></script>
+
+<!--    google maps-->
+<script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBp5uVf28qj4AgNO4qKcfNSgRUIVtaUQAI&callback=initMap&v=weekly"
+        defer
+></script>
+
+<!-- OWN JS -->
+<script src="js/main.js"></script>
+
+
+</body>
+</html>

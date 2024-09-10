@@ -1,0 +1,335 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Gerrymandering</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/fullpage.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+    <div class="header">
+        <a href="../index.html">
+            <img src="../img/sts_logo.jpeg" alt="Logo" style="height: 50px;">
+        </a>
+    </div>
+
+    <!-- WRAPPER -->
+    <div class="container-fluid">
+
+        <div id="fullpage">
+
+<!--            SECTION1: TITLE, DESCRIPTION, CREDITS, AND BACKGROUND IMAGE-->
+            <div class="section">
+                <div class="row d-flex" id="first">
+                    <div class="container-fluid">
+
+
+                        <div class="row d-flex justify-content-center top-part-first">
+
+                            <div class="col-12 justify-content-center">
+
+                                <div class="row d-flex align-items-center">
+                                    <div class="col-12">
+                                        <br>
+                                        <br>
+                                        <h2>GERRYMANDERING</h2>
+                                    </div>
+                                </div>
+
+
+                                <div class="row d-flex align-items-center">
+                                    <div class="col-12">
+                                        <br>
+                                        <br>
+                                        <p>Determine if your state gerrymandered its Congressional districts, through the power of simulation.</p>
+                                        <p>Get started by selecting your state!</p>
+                                        <br>
+                                        <br>
+                                    </div>
+                                </div>
+
+
+                                <div class="row justify-content-center">
+                                    <div class="col-4">
+                                    </div>
+                                    <div class="col-4 justify-content-center">
+                                        <select class="statesDropdown" id="statesDropdown">
+                                            <option value="">Choose a state:</option>
+                                            <option value="Alabama">Alabama</option>
+                                            <option value="Arizona">Arizona</option>
+                                            <option value="Arkansas">Arkansas</option>
+                                            <option value="California">California</option>
+                                            <option value="Colorado">Colorado</option>
+                                            <option value="Connecticut">Connecticut</option>
+                                            <option value="Florida">Florida</option>
+                                            <option value="Georgia">Georgia</option>
+                                            <option value="Hawaii">Hawaii</option>
+                                            <option value="Idaho">Idaho</option>
+                                            <option value="Illinois">Illinois</option>
+                                            <option value="Indiana">Indiana</option>
+                                            <option value="Iowa">Iowa</option>
+                                            <option value="Kansas">Kansas</option>
+                                            <option value="Kentucky">Kentucky</option>
+                                            <option value="Louisiana">Louisiana</option>
+                                            <option value="Maine">Maine</option>
+                                            <option value="Maryland">Maryland</option>
+                                            <option value="Massachusetts">Massachusetts</option>
+                                            <option value="Michigan">Michigan</option>
+                                            <option value="Minnesota">Minnesota</option>
+                                            <option value="Mississippi">Mississippi</option>
+                                            <option value="Missouri">Missouri</option>
+                                            <option value="Montana">Montana</option>
+                                            <option value="Nebraska">Nebraska</option>
+                                            <option value="Nevada">Nevada</option>
+                                            <option value="New Hampshire">New Hampshire</option>
+                                            <option value="New Jersey">New Jersey</option>
+                                            <option value="New Mexico">New Mexico</option>
+                                            <option value="New York">New York</option>
+                                            <option value="North Carolina">North Carolina</option>
+                                            <option value="Ohio">Ohio</option>
+                                            <option value="Oklahoma">Oklahoma</option>
+                                            <option value="Oregon">Oregon</option>
+                                            <option value="Pennsylvania">Pennsylvania</option>
+                                            <option value="Rhode Island">Rhode Island</option>
+                                            <option value="South Carolina">South Carolina</option>
+                                            <option value="Tennessee">Tennessee</option>
+                                            <option value="Texas">Texas</option>
+                                            <option value="Utah">Utah</option>
+                                            <option value="Virginia">Virginia</option>
+                                            <option value="Washington">Washington</option>
+                                            <option value="West Virginia">West Virginia</option>
+                                            <option value="Wisconsin">Wisconsin</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-4">
+                                    </div>
+                                </div>
+
+
+                                <div class="row d-flex align-items-center">
+                                    <div class="col-3 justify-content-center">
+                                    </div>
+                                    <div id = "loadingCol" class="col-6 justify-content-center" style="display:none;">
+                                        <img id = "loading" src="gifs/loading_transparent.gif" style="width:100%">
+                                    </div>
+                                    <div class="col-3 justify-content-center">
+                                    </div>
+                                </div>
+
+
+
+
+                            </div>
+
+
+                        </div>
+                        <div class="row d-flex justify-content-center bottom-part-first">
+                            <div class="col-12">
+                                <div class="row credits">
+                                    &nbsp; &nbsp; Applet by &nbsp;
+                                    <a href="https://skewthescript.org/">Skew The Script</a>
+                                    (authors: Max Cembalest, Dashiell Young-Saver, and Chris Olsen)
+                                </div>
+                                <div class="row credits">
+                                    &nbsp; &nbsp; Simulation powered by &nbsp;
+                                    <a href="https://alarm-redist.github.io/fifty-states/">ALARM redist</a>
+                                    &nbsp; (by Christopher Kenny & Cory McCartan)
+                                </div>
+                                <div class="row credits">
+                                    &nbsp; &nbsp; Background image by Chris Gash.
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+<!--            SECTION2: ENACTED MAP, BUTTONS, SIMULATION GIF, SIMULATED MAPS, BAR GRAPH-->
+            <div class="section">
+                <div class="row d-flex">
+                    <div class="container-fluid">
+                        <div class="col-12 align-self-center">
+                            <div class="row d-flex justify-content-center">
+
+                        <!--                LEFT COLUMN: ENACTED MAP, STATE DATA TEXT FIELDS, BUTTONS, DESCRIPTION, AND CREDITS:-->
+                                <div class = "col-4 container align-self-center">
+
+                                    <div class="row d-flex justify-content-center" style="border: thin solid grey; border-radius: 5px; background-color: #dcdcdc">
+
+
+                                        <div class="col">
+                                            <div class="row d-flex justify-content-center">
+                                                <!--                                    ENACTED MAP LABEL-->
+                                                <div id = "mapEnactedCollabel" class="col justify-content-center" style="display: block; text-align:center">
+                                                    <h5 id = "mapEnactedlabel"></h5>
+                                                </div>
+<!--                                                <button class="change-state">change state</button>-->
+                                            </div>
+                                        </div>
+
+
+
+
+                                        <!--                                    ENACTED MAP-->
+                                        <div id="mapEnactedcol" class="row">
+                                            <div class="col container justify-content-center" style="text-align:center">
+                                                <img id="mapEnacted">
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div id = "mapEnactedColNumDist" class="col justify-content-center" style="display: block; text-align:center">
+                                                <h6 id = "mapEnactedNumDist"></h6>
+                                            </div>
+
+                                        </div>
+
+
+
+                                        <!--                                    BUTTONS-->
+                                        <div id="simButtons" class="row" style="display: none">
+                                            <div class="row" style="display: block; text-align:center">
+                                                <div class="buttons">
+                                                    <button class="add-samples-1"> Add 1 sample</button>
+                                                    <button class="add-samples-3"> Add 3 samples</button>
+                                                    <button class="add-samples-10"> Add 10 samples</button>
+                                                    <button class="add-samples-30"> Add 30 samples</button>
+                                                    <button class="add-samples-100"> Add 100 samples</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="row d-flex justify-content-left description">
+                                        <div class="col-12">
+                                            <div class="row d-flex justify-content-center" style="padding-top: 8px">
+
+                                                <p>
+                                                <b>Methods:</b> the
+                                                <a href="https://alarm-redist.github.io/fifty-states/">redist</a>
+                                                    simulator divides states into randomly drawn districts of equal population size.
+                                                    Then, it uses prior election data to find the political lean of the simulated districts.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+
+                        <!--                RIGHT COLUMN:-->
+                                <div class = "col-8 align-self-center">
+
+                                    <div style="border: thin solid grey; border-radius: 5px;">
+
+                                        <!--           ROW 1: OVERALL SIMULATED MAP LABEL-->
+                                        <div class="row d-flex justify-content-center" style="height: 5vh">
+                                            <div class="col justify-content-center" style="text-align:center">
+                                                <h4 id = "simMapLabel"></h4>
+                                            </div>
+                                        </div>
+
+
+                                        <!--                    ROW 3: SIMULATED MAP LABELS-->
+                                        <br>
+                                        <div class="row d-flex justify-content-center" style="height: 5vh; text-align:center">
+                                            <div id = "mapSim1Collabel" class="col-4 justify-content-center" style="text-align:center">
+                                                <h6 id = "simMap1Label"></h6>
+                                            </div>
+                                            <div id = "mapSim2Collabel" class="col-4 justify-content-center" style="text-align:center">
+                                                <h6 id = "simMap2Label"></h6>
+                                            </div>
+                                            <div id = "mapSim3Collabel" class="col-4 justify-content-center" style="text-align:center">
+                                                <h6 id = "simMap3Label"></h6>
+                                            </div>
+                                        </div>
+
+
+                                        <!--           ROW 2: SIMULATED MAPS AND SIMULATION GIF-->
+                                        <div class="row d-flex justify-content-center" style="height: 40vh">
+                                            <div id="map1col" class="col">
+                                                <img id="map1" class="mapImage">
+                                            </div>
+                                            <div id="map2col" class="col">
+                                                <img id="map2" class="mapImage">
+                                            </div>
+                                            <div id="map3col" class="col">
+                                                <img id="map3" class="mapImage">
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div style="border: thin solid grey; border-radius: 5px;">
+                                        <!--                   ROW 4: BAR GRAPH TITLE-->
+                                        <div class="row d-flex justify-content-center" style="height: 5vh">
+                                            <div class="col justify-content-center" style="text-align:center; height: 100%">
+                                                <br>
+                                                <h4>Simulation Results</h4>
+                                            </div>
+                                        </div>
+
+                                        <!--                    ROW 5: BAR GRAPH-->
+                                        <div class="row d-flex justify-content-center" style="height: 39vh">
+                                            <div id="barGraph"></div>
+                                        </div>
+                                        <div class="row d-flex justify-content-center" style="height: 6vh">
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<!-- - - - - - - - - - - - >
+<    Load JS libraries     >
+<- - - - - - - - - - - - -->
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+
+<!-- SCROLLING -->
+<script type="text/javascript" src="js/fullpage.js"></script>
+<script type="text/javascript">
+    new fullpage('#fullpage', {
+        //options here
+        autoScrolling: true,
+        anchors:['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'fifthPage', 'sixthPage', 'seventhPage', 'eighthPage', 'ninthPage'],
+        navigation: true,
+        navigationPosition: 'right',
+
+    });
+
+    //methods
+    fullpage_api.setAllowScrolling(true);
+</script>
+    <!-- d3 -->
+<script src="https://d3js.org/d3.v7.min.js" charset="utf-8"></script>
+<script src="https://d3js.org/d3-array.v2.min.js"></script>
+
+
+<!-- OWN JS -->
+<script src="js/main.js"></script>
+<script src="js/barVis.js"></script>
+
+</body>
+</html>
