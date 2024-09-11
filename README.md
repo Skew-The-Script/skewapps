@@ -4,6 +4,6 @@ Welcome to our skewapps repo! This repository is mainly a place to keep all of o
 
 We currently have the following applets:
 
-- Veterans HealthCare Application
-- Gerrymandering Application
-- Flint Application
+- Veterans HealthCare Application (AP Stats unit 6)
+- Gerrymandering Application (AP Stats Unit 6)
+- Flint Application (AP Stats Unit 7)
