@@ -15,6 +15,22 @@ html {
     justify-content: start; /* Adjust as needed for alignment */
 }
 
+.logo-container {
+    background-color: white; /* white background */
+    padding: 10px 20px;      /* space around the logo */
+    display: inline-block;    /* shrink to fit logo */
+    border-radius: 5px;       /* optional: rounded corners */
+    position: absolute;       /* position over the Section 1 background */
+    top: 20px;                /* distance from top of section */
+    left: 10px;               /* distance from left */
+    z-index: 10;              /* ensure it’s on top of background */
+}
+
+.logo-container img {
+    height: 50px;             /* keep original size */
+    display: block;
+}
+
 
 .container-fluid {
     height: 100vh;
